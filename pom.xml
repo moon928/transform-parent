@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.trasen.mcpc</groupId>
+        <artifactId>mcpc-parent</artifactId>
+        <version>2.2.0-RELEASE</version>
+    </parent>
+    <groupId>cn.trasen.mcpc.transform</groupId>
+    <artifactId>transform-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>中文转拼音码与五笔码</description>
+
+    <modules>
+        <module>transform-entity</module>
+        <module>transform-boot</module>
+    </modules>
+
+    <properties>
+        <!-- 自已部门jar包版本号写在这里 -->
+        <mcpc.framework>2.3.0-RELEASE</mcpc.framework>
+        <mcpc.bsf>2.0.0-SNAPSHOT</mcpc.bsf>
+        <!-- 第三方jar包版本号写在这里 -->
+    </properties>
+
+    <!-- 所有的jar包必须在这里先管理，子模块直接使用 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.trasen.mcpc.framework</groupId>
+                <artifactId>framework-bom</artifactId>
+                <version>${mcpc.framework}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

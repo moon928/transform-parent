@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.trasen.mcpc.transform.dao.TTestMapper">
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <resultMap id="BaseResultMap" type="cn.trasen.mcpc.transform.model.TTest">
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="NAME" jdbcType="VARCHAR" property="name" />
+        <result column="WB_CODE" jdbcType="VARCHAR" property="wbCode" />
+        <result column="PY_CODE" jdbcType="VARCHAR" property="pyCode" />
+    </resultMap>
+
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <sql id="base_column">
+        ${alias}ID,
+        ${alias}CHEMICAL_NAME,
+        ${alias}WB_CODE,
+        ${alias}PY_CODE
+    </sql>
+
+    <select id="page" resultMap="BaseResultMap">
+        select
+        <include refid="base_column">
+            <property name="alias" value="A."/>
+        </include>
+        from t_test a
+        where 1=1
+        <if test="query != null and query != '' ">
+            AND a.name like '%${query}%'
+        </if>
+    </select>
+
+    <select id="pageNameByTableName" resultType="toPyAndWbDto">
+        select
+<!--        <include refid="base_column">-->
+<!--            <property name="alias" value="A."/>-->
+<!--        </include>-->
+        id,${columnName} as name,py_code,wb_code
+        from ${tableName}
+    </select>
+
+    <update id="modifyBatch" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+            update ${tableName}
+            <set>
+                <!--<if test="item.pyCode != null and item.pyCode != '' ">-->
+                    PY_CODE = #{item.pyCode},
+                <!--</if>-->
+                <!--<if test="item.wbCode != null and item.wbCode != '' ">-->
+                    WB_CODE = #{item.wbCode}
+                <!--</if>-->
+            </set>
+            WHERE ID = #{item.id}
+        </foreach>
+    </update>
+</mapper>

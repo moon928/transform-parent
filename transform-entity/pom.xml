@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.trasen.mcpc.transform</groupId>
+        <artifactId>transform-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>transform-entity</artifactId>
+    <description>这里面只放实体、dto、枚举</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.trasen.mcpc.framework</groupId>
+            <artifactId>framework-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>
