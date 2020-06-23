@@ -70,9 +70,13 @@ public class SpecsServiceImpl extends BaseServiceImpl<UscDrgSpecs> implements Sp
         String have3 = isHave("西药", "drug_type");
         System.out.println(have1);
         System.out.println(have2);
-
-
         System.out.println(have3);
         return "ok";
+    }
+
+    @Override
+    public String jkypToSql(String excelPath, String sqlPath) {
+
+        return null;
     }
 }

@@ -8,4 +8,12 @@ package cn.trasen.mcpc.transform.service;
  */
 public interface SpecsService {
     String test();
+
+    /**
+     * 进口药品转sql
+     * @param excelPath excel地址
+     * @param sqlPath sql存入地址
+     * @return
+     */
+    String jkypToSql(String excelPath, String sqlPath);
 }
