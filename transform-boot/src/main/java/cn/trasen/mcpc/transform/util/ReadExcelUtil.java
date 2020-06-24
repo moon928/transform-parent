@@ -193,6 +193,7 @@ public class ReadExcelUtil {
                 data.setId(IdWorker.getInstance().getId());
                 data.setImported(1);
                 XSSFRow row = sheet0.getRow(i);
+                //产品名称
                 Cell cell = row.getCell(0);
                 if (StringUtils.isNotBlank(cell.getStringCellValue())){
 
@@ -248,11 +249,18 @@ public class ReadExcelUtil {
                     data.setRelAddr(cell.getStringCellValue());
                 }
 
-                //生产厂家
-                cell = row.getCell(9);
+                //药品本位码
+                cell = row.getCell(11);
                 if (StringUtils.isNotBlank(cell.getStringCellValue())){
-                    data.setRelAddr(cell.getStringCellValue());
+                    data.setDrugcodeSpda(cell.getStringCellValue());
                 }
+
+                //批准文号
+                cell = row.getCell(17);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setAppCode(cell.getStringCellValue());
+                }
+
                 data.setVersionId(511098310758469632L);
                 success.add(data);
             }

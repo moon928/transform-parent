@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.trasen.mcpc.transform.dao.TmpSpecsMapper">
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <resultMap id="BaseResultMap" type="cn.trasen.mcpc.transform.model.TmpSpecs">
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="STANDARD_CODE" jdbcType="VARCHAR" property="standardCode" />
+        <result column="CHEMICAL_NAME" jdbcType="VARCHAR" property="chemicalName" />
+        <result column="DRUG_DOSFORM_CODE" jdbcType="VARCHAR" property="drugDosformCode" />
+        <result column="DRUG_TYPE" jdbcType="VARCHAR" property="drugType" />
+        <result column="ENG_NANE" jdbcType="VARCHAR" property="engNane" />
+        <result column="PY_CODE" jdbcType="VARCHAR" property="pyCode" />
+        <result column="WB_CODE" jdbcType="VARCHAR" property="wbCode" />
+        <result column="SPEC_DESC" jdbcType="VARCHAR" property="specDesc" />
+        <result column="DOSE" jdbcType="VARCHAR" property="dose" />
+        <result column="DOSEUNIT_CODE" jdbcType="VARCHAR" property="doseunitCode" />
+        <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+        <result column="CONTENTUNIT_CODE" jdbcType="VARCHAR" property="contentunitCode" />
+        <result column="PACKNUM" jdbcType="VARCHAR" property="packnum" />
+        <result column="PACKUNIT_CODE" jdbcType="VARCHAR" property="packunitCode" />
+        <result column="PACK_MATERIAL" jdbcType="VARCHAR" property="packMaterial" />
+        <result column="UNIT" jdbcType="VARCHAR" property="unit" />
+        <result column="ANTI_GRADE_CODE" jdbcType="VARCHAR" property="antiGradeCode" />
+        <result column="DDD_VALUE" jdbcType="VARCHAR" property="dddValue" />
+        <result column="DDD_DOSE" jdbcType="VARCHAR" property="dddDose" />
+        <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+        <result column="DOMESTIC" jdbcType="VARCHAR" property="domestic" />
+        <result column="IMPORTED" jdbcType="VARCHAR" property="imported" />
+        <result column="VERSION_ID" jdbcType="DECIMAL" property="versionId" />
+        <result column="QUOTE_DRG_ID" jdbcType="DECIMAL" property="quoteDrgId" />
+        <result column="PRODUCT_INS_TYPE" jdbcType="VARCHAR" property="productInsType" />
+        <result column="PRODUCT_CODE" jdbcType="VARCHAR" property="productCode" />
+        <result column="PRODUCT_NAME" jdbcType="VARCHAR" property="productName" />
+        <result column="PRODUCT_MODEL" jdbcType="VARCHAR" property="productModel" />
+        <result column="PRODUCT_REMARK" jdbcType="VARCHAR" property="productRemark" />
+        <result column="ORG_CODE" jdbcType="VARCHAR" property="orgCode" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <sql id="base_column">
+        ${alias}ID,
+        ${alias}STANDARD_CODE,
+        ${alias}CHEMICAL_NAME,
+        ${alias}DRUG_DOSFORM_CODE,
+        ${alias}DRUG_TYPE,
+        ${alias}ENG_NANE,
+        ${alias}PY_CODE,
+        ${alias}WB_CODE,
+        ${alias}SPEC_DESC,
+        ${alias}DOSE,
+        ${alias}DOSEUNIT_CODE,
+        ${alias}CONTENT,
+        ${alias}CONTENTUNIT_CODE,
+        ${alias}PACKNUM,
+        ${alias}PACKUNIT_CODE,
+        ${alias}PACK_MATERIAL,
+        ${alias}UNIT,
+        ${alias}ANTI_GRADE_CODE,
+        ${alias}DDD_VALUE,
+        ${alias}DDD_DOSE,
+        ${alias}MEMO,
+        ${alias}DOMESTIC,
+        ${alias}IMPORTED,
+        ${alias}VERSION_ID,
+        ${alias}QUOTE_DRG_ID,
+        ${alias}PRODUCT_INS_TYPE,
+        ${alias}PRODUCT_CODE,
+        ${alias}PRODUCT_NAME,
+        ${alias}PRODUCT_MODEL,
+        ${alias}PRODUCT_REMARK,
+        ${alias}ORG_CODE,
+        ${alias}STATUS,
+        ${alias}DELETE_FLAG,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_TIME,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_TIME
+    </sql>
+</mapper>

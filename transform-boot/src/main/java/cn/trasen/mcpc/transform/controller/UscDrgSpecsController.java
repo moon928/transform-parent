@@ -44,4 +44,17 @@ public class UscDrgSpecsController {
             return PlatformResult.failure(e.getMessage());
         }
     }
+
+
+    @ApiOperation(value = "药品数据导入-导入药品规格数据", notes = "药品数据导入-导入药品规格数据")
+    @PostMapping("/specs")
+    public PlatformResult<String> specs() {
+        try{
+            String s = specsService.jkypSpecs();
+            return PlatformResult.success(s);
+        }catch (Exception e){
+            log.error(e.getMessage(),e);
+            return PlatformResult.failure(e.getMessage());
+        }
+    }
 }

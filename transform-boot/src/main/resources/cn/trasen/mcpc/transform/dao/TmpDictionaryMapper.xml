@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.trasen.mcpc.transform.dao.TmpDictionaryMapper">
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <resultMap id="BaseResultMap" type="cn.trasen.mcpc.transform.model.TmpDictionary">
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="SPECID" jdbcType="VARCHAR" property="specid" />
+        <result column="COMNAME" jdbcType="VARCHAR" property="comname" />
+        <result column="DRUGCODE_SPDA" jdbcType="VARCHAR" property="drugcodeSpda" />
+        <result column="DRUGCODE_HPC" jdbcType="VARCHAR" property="drugcodeHpc" />
+        <result column="APP_CODE" jdbcType="VARCHAR" property="appCode" />
+        <result column="FACT_ID" jdbcType="DECIMAL" property="factId" />
+        <result column="MEMO" jdbcType="VARCHAR" property="memo" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <sql id="base_column">
+        ${alias}ID,
+        ${alias}SPECID,
+        ${alias}COMNAME,
+        ${alias}DRUGCODE_SPDA,
+        ${alias}DRUGCODE_HPC,
+        ${alias}APP_CODE,
+        ${alias}FACT_ID,
+        ${alias}MEMO,
+        ${alias}PUBLISH,
+        ${alias}STATUS,
+        ${alias}DELETE_FLAG,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_TIME,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_TIME
+    </sql>
+</mapper>
