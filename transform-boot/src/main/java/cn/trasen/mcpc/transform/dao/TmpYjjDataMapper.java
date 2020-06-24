@@ -1,6 +1,8 @@
 package cn.trasen.mcpc.transform.dao;
 
+import cn.trasen.core.feature.orm.mybatis.Page;
 import cn.trasen.mcpc.transform.model.TmpYjjData;
+import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
@@ -22,4 +24,12 @@ public interface TmpYjjDataMapper extends Mapper<TmpYjjData> {
      * @return
      */
     int addBatch(List<TmpYjjData> list);
+
+    /**
+     * 分页查询临时表数据
+     * @param page
+     * @param type 0-国产 1-进口
+     * @return
+     */
+    List<TmpYjjData> page(Page page,@Param("type") String type);
 }

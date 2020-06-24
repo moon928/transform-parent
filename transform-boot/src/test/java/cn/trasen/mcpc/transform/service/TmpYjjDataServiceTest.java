@@ -1,5 +1,6 @@
 package cn.trasen.mcpc.transform.service;
 
+import cn.trasen.core.feature.orm.mybatis.Page;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import cn.trasen.mcpc.transform.model.TmpYjjData;
 import cn.trasen.mcpc.framework.base.OperContext;
+
+import java.util.List;
 
 /**
  * 药监局数据临时表服务测试.
@@ -53,8 +56,17 @@ public class TmpYjjDataServiceTest {
 
     @Test
     public void addBatchYztTest(){
-        String excelPath = "D:/Trasen/统一标准目录/药物监管局药品数据/jkyp/details/jkyp.xlsx";
+        String excelPath = "D:/Trasen/统一标准目录/药物监管局药品数据/jkyp/details/all.xlsx";
         int i = tmpYjjDataService.addBatchYzt(excelPath);
         Assert.assertNotNull(i);
+    }
+
+    @Test
+    public void pageTest(){
+        Page page = new Page();
+        page.setPageNo(1);
+        page.setPageSize(100);
+        List<TmpYjjData> data = tmpYjjDataService.page(page, "1");
+        Assert.assertNotNull(data);
     }
 }

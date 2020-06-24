@@ -1,5 +1,6 @@
 package cn.trasen.mcpc.transform.service.impl;
 
+import cn.trasen.core.feature.orm.mybatis.Page;
 import cn.trasen.mcpc.transform.util.ReadExcelUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,5 +66,10 @@ public class TmpYjjDataServiceImpl extends BaseServiceImpl<TmpYjjData> implement
         List<TmpYjjData> tmpYjjData = ReadExcelUtil.readXlsxToDbForjkyp(excelPath);
         int i = tmpYjjDataMapper.addBatch(tmpYjjData);
         return i;
+    }
+
+    @Override
+    public List<TmpYjjData> page(Page page, String type) {
+        return tmpYjjDataMapper.page(page, type);
     }
 }

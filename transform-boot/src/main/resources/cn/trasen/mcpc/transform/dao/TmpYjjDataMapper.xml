@@ -56,4 +56,19 @@
             #{item.comname},#{item.drugcodeSpda},#{item.appCode},#{item.factName},#{item.relAddr},#{item.domestic},#{item.imported})
         </foreach>
     </insert>
+
+    <select id="page" resultMap="BaseResultMap">
+        select
+        <include refid="base_column">
+            <property name="alias" value="a." />
+        </include>
+        from tmp_yjj_data a
+        where 1=1
+        <if test="type == 0">
+            and a.DOMESTIC = 1
+        </if>
+        <if test="type == 1">
+            and a.IMPORTED = 1
+        </if>
+    </select>
 </mapper>

@@ -1,7 +1,10 @@
 package cn.trasen.mcpc.transform.service;
 
+import cn.trasen.core.feature.orm.mybatis.Page;
 import cn.trasen.mcpc.transform.model.TmpYjjData;
 import cn.trasen.mcpc.framework.base.OperContext;
+
+import java.util.List;
 
 /**
  * 药监局数据临时表服务.
@@ -59,4 +62,12 @@ public interface TmpYjjDataService {
      * @return
      */
     int addBatchYzt(String excelPath);
+
+    /**
+     * 分页查询临时表数据
+     * @param page
+     * @param type 0-国产 1-进口
+     * @return
+     */
+    List<TmpYjjData> page(Page page,String type);
 }
