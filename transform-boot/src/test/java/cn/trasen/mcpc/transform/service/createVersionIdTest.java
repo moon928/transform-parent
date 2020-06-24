@@ -1,6 +1,7 @@
 package cn.trasen.mcpc.transform.service;
 
 import cn.trasen.mcpc.framework.util.IdWorker;
+import cn.trasen.mcpc.transform.util.WriteFile;
 
 /**
  * @program: project-parent
@@ -17,10 +18,11 @@ public class createVersionIdTest {
         String channelType = "0";
         String status = "1";
         String deleteFlag = "0";
-        String sql = String.format("INSERT INTO usc_dict_version (ID, NAME, RESOURCE_TYPE,CHANNEL_TYPE,STATUS,DELETE_FLAG)" +
-                " VALUES (%s, %s, '%s','%s','%s','%s'));\n",
+        String sql = "";
+        sql = String.format("INSERT INTO usc_dict_version (ID, NAME, RESOURCE_TYPE,CHANNEL_TYPE,STATUS,DELETE_FLAG)" +
+                " VALUES ('%s', '%s', '%s','%s','%s','%s');\n",
                 id,name,resourceType,channelType,status,deleteFlag);
-
+//        WriteFile.writeToFile("C:\\Users\\Yan\\Desktop\\temporary\\versionId.txt",sql);
         System.out.println(sql);
     }
 }
