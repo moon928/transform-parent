@@ -16,4 +16,10 @@ public interface SpecsService {
      * @return
      */
     String jkypToSql(String excelPath, String sqlPath);
+
+    /**
+     * 导入药品规格
+     * @return
+     */
+    String jkypSpecs();
 }

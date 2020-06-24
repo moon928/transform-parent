@@ -162,4 +162,9 @@ public class SpecsServiceImpl extends BaseServiceImpl<UscDrgSpecs> implements Sp
         }
         WriteFile.writeToFile(filePath,json);
     }
+
+    @Override
+    public String jkypSpecs() {
+        return null;
+    }
 }
