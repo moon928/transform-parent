@@ -52,4 +52,11 @@ public interface TmpYjjDataService {
      * @return
      */
     TmpYjjData getById(Long id);
+
+    /**
+     * 批量插入药监局数据
+     * @param excelPath
+     * @return
+     */
+    int addBatchYzt(String excelPath);
 }

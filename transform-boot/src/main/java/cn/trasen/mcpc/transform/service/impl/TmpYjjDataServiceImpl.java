@@ -1,5 +1,6 @@
 package cn.trasen.mcpc.transform.service.impl;
 
+import cn.trasen.mcpc.transform.util.ReadExcelUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,8 @@ import cn.trasen.mcpc.transform.service.TmpYjjDataService;
 import cn.trasen.mcpc.framework.base.BaseServiceImpl;
 import cn.trasen.mcpc.framework.base.OperContext;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
 
 /**
  * 药监局数据临时表服务实现.
@@ -55,5 +58,12 @@ public class TmpYjjDataServiceImpl extends BaseServiceImpl<TmpYjjData> implement
     public TmpYjjData getById(Long id) {
         TmpYjjData tmpYjjData = super.selectByPrimaryKey(id);
         return tmpYjjData;
+    }
+
+    @Override
+    public int addBatchYzt(String excelPath) {
+        List<TmpYjjData> tmpYjjData = ReadExcelUtil.readXlsxToDbForjkyp(excelPath);
+        int i = tmpYjjDataMapper.addBatch(tmpYjjData);
+        return i;
     }
 }

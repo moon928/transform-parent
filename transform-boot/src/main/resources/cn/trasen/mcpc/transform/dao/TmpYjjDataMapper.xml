@@ -46,4 +46,14 @@
         ${alias}UPDATE_BY,
         ${alias}UPDATE_TIME
     </sql>
+
+    <insert id="addBatch" parameterType="java.util.List">
+        INSERT INTO tmp_yjj_data (ID,CHEMICAL_NAME,ENG_NAME,DRUG_DOSFORM_CODE,DRUG_TYPE,SPEC_DESC,VERSION_ID,
+        COMNAME,DRUGCODE_SPDA,APP_CODE,FACT_NAME,REL_ADDR,DOMESTIC,IMPORTED)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id},#{item.chemicalName},#{item.engName},#{item.drugDosformCode},#{item.drugType},#{item.specDesc},#{item.versionId},
+            #{item.comname},#{item.drugcodeSpda},#{item.appCode},#{item.factName},#{item.relAddr},#{item.domestic},#{item.imported})
+        </foreach>
+    </insert>
 </mapper>

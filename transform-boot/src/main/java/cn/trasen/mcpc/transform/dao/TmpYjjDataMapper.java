@@ -3,6 +3,8 @@ package cn.trasen.mcpc.transform.dao;
 import cn.trasen.mcpc.transform.model.TmpYjjData;
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 /**
  * 药监局数据临时表数据库操作.
  * 
@@ -13,4 +15,11 @@ import tk.mybatis.mapper.common.Mapper;
  * @Version: V1.0
  */
 public interface TmpYjjDataMapper extends Mapper<TmpYjjData> {
+
+    /**
+     * 批量插入药监局数据
+     * @param list
+     * @return
+     */
+    int addBatch(List<TmpYjjData> list);
 }

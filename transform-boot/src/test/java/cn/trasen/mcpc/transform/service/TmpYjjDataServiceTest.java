@@ -50,4 +50,11 @@ public class TmpYjjDataServiceTest {
         TmpYjjData tmpYjjData = tmpYjjDataService.getById(id);
         Assert.assertNotNull(tmpYjjData);
     }
+
+    @Test
+    public void addBatchYztTest(){
+        String excelPath = "D:/Trasen/统一标准目录/药物监管局药品数据/jkyp/details/jkyp.xlsx";
+        int i = tmpYjjDataService.addBatchYzt(excelPath);
+        Assert.assertNotNull(i);
+    }
 }

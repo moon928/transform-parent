@@ -1,6 +1,8 @@
 package cn.trasen.mcpc.transform.util;
 
+import cn.trasen.mcpc.framework.util.IdWorker;
 import cn.trasen.mcpc.transform.dto.UscDrgSpecsDto;
+import cn.trasen.mcpc.transform.model.TmpYjjData;
 import cn.trasen.mcpc.transform.model.UscDrgSpecs;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
@@ -156,8 +158,6 @@ public class ReadExcelUtil {
                 if (StringUtils.isNotBlank(cell.getStringCellValue())){
                     uscDrgSpecs.setRelAddr(cell.getStringCellValue());
                 }
-
-
                 uscDrgSpecs.setVersionId(511098310758469632L);
                 success.add(uscDrgSpecs);
             }
@@ -171,6 +171,98 @@ public class ReadExcelUtil {
         return map;
     }
 
+
+    /**
+     * 读取进口药品数据到数据库临时表
+     * @param path
+     * @return
+     */
+    public static List<TmpYjjData> readXlsxToDbForjkyp(String path) {
+        List<TmpYjjData> success = new ArrayList<TmpYjjData>();
+        try{
+            OPCPackage pkg=OPCPackage.open(path);
+            XSSFWorkbook excel=new XSSFWorkbook(pkg);
+            //获取第一个sheet
+            XSSFSheet sheet0=excel.getSheetAt(0);
+            //总条数
+            int lastRowNum = sheet0.getLastRowNum();
+
+            for (int i=1;i<=lastRowNum;i++){
+//                UscDrgSpecsDto uscDrgSpecs = new UscDrgSpecsDto();
+                TmpYjjData data = new TmpYjjData();
+                data.setId(IdWorker.getInstance().getId());
+                data.setImported(1);
+                XSSFRow row = sheet0.getRow(i);
+                Cell cell = row.getCell(0);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+
+                    data.setChemicalName(cell.getStringCellValue());
+                }else{
+                    cell = row.getCell(1);
+                    data.setChemicalName(cell.getStringCellValue());
+                }
+                //英文名
+                cell = row.getCell(1);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setEngName(cell.getStringCellValue());
+                }
+                //商品名
+                cell = row.getCell(2);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setComname(cell.getStringCellValue());
+                }else {
+                    cell = row.getCell(3);
+                    data.setComname(cell.getStringCellValue());
+                }
+                //剂型
+                cell = row.getCell(4);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setDrugDosformCode(cell.getStringCellValue());
+
+                }
+                //规格
+                cell = row.getCell(5);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setSpecDesc(cell.getStringCellValue());
+                }
+                //药品类型
+                cell = row.getCell(6);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setDrugType(cell.getStringCellValue());
+                }
+                //生产厂家
+                cell = row.getCell(7);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setFactName(cell.getStringCellValue());
+                }else {
+                    cell = row.getCell(8);
+                    data.setFactName(cell.getStringCellValue());
+                }
+
+                //厂商地址 ----> 联系地址
+                cell = row.getCell(9);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setRelAddr(cell.getStringCellValue());
+                }else {
+                    cell = row.getCell(10);
+                    data.setRelAddr(cell.getStringCellValue());
+                }
+
+                //生产厂家
+                cell = row.getCell(9);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    data.setRelAddr(cell.getStringCellValue());
+                }
+                data.setVersionId(511098310758469632L);
+                success.add(data);
+            }
+        }
+        catch (Exception e){
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return success;
+    }
 
 //    public static void writeExcel(String ){
 //
