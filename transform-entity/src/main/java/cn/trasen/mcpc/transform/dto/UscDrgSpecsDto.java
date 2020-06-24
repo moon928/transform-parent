@@ -18,4 +18,23 @@ public class UscDrgSpecsDto extends UscDrgSpecs {
     /**读取错误信息*/
     private String readError;
 
+    /**商品名*/
+    private String comName;
+
+    /**生产厂家名称*/
+    private String factName;
+
+    /**药品本位码*/
+    private String drugCodeSpda;
+
+    /**批准文号*/
+    private String appCode;
+
+    /**生产厂家id*/
+    private Long factId;
+
+
+
+    /**生产厂家联系地址*/
+    private String relAddr;
 }

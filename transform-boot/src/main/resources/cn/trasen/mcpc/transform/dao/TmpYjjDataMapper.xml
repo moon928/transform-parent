@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.trasen.mcpc.transform.dao.TmpYjjDataMapper">
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <resultMap id="BaseResultMap" type="cn.trasen.mcpc.transform.model.TmpYjjData">
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="CHEMICAL_NAME" jdbcType="VARCHAR" property="chemicalName" />
+        <result column="ENG_NAME" jdbcType="VARCHAR" property="engName" />
+        <result column="DRUG_DOSFORM_CODE" jdbcType="VARCHAR" property="drugDosformCode" />
+        <result column="DRUG_TYPE" jdbcType="VARCHAR" property="drugType" />
+        <result column="SPEC_DESC" jdbcType="VARCHAR" property="specDesc" />
+        <result column="VERSION_ID" jdbcType="DECIMAL" property="versionId" />
+        <result column="COMNAME" jdbcType="VARCHAR" property="comname" />
+        <result column="DRUGCODE_SPDA" jdbcType="VARCHAR" property="drugcodeSpda" />
+        <result column="APP_CODE" jdbcType="VARCHAR" property="appCode" />
+        <result column="FACT_NAME" jdbcType="VARCHAR" property="factName" />
+        <result column="REL_ADDR" jdbcType="VARCHAR" property="relAddr" />
+        <result column="DOMESTIC" jdbcType="VARCHAR" property="domestic" />
+        <result column="IMPORTED" jdbcType="VARCHAR" property="imported" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <sql id="base_column">
+        ${alias}ID,
+        ${alias}CHEMICAL_NAME,
+        ${alias}ENG_NAME,
+        ${alias}DRUG_DOSFORM_CODE,
+        ${alias}DRUG_TYPE,
+        ${alias}SPEC_DESC,
+        ${alias}VERSION_ID,
+        ${alias}COMNAME,
+        ${alias}DRUGCODE_SPDA,
+        ${alias}APP_CODE,
+        ${alias}FACT_NAME,
+        ${alias}REL_ADDR,
+        ${alias}DOMESTIC,
+        ${alias}IMPORTED,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_TIME,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_TIME
+    </sql>
+</mapper>

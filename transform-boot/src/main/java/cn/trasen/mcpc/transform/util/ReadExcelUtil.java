@@ -86,7 +86,10 @@ public class ReadExcelUtil {
             int lastRowNum = sheet0.getLastRowNum();
 
             for (int i=1;i<=lastRowNum;i++){
-
+                //标识 0-无错误发生 1-有错误发什么
+                int flag = 0;
+                //错误信息
+                String readError = "";
                 UscDrgSpecsDto uscDrgSpecs = new UscDrgSpecsDto();
                 String str = "";
                 XSSFRow row = sheet0.getRow(i);
@@ -98,8 +101,14 @@ public class ReadExcelUtil {
                     uscDrgSpecs.setChemicalName(cell.getStringCellValue());
                 }
 
-                cell = row.getCell(1);
-                uscDrgSpecs.setWbCode(cell.getStringCellValue());
+                //商品名
+                cell = row.getCell(2);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    uscDrgSpecs.setComName(cell.getStringCellValue());
+                }else {
+                    cell = row.getCell(3);
+                    uscDrgSpecs.setComName(cell.getStringCellValue());
+                }
 
                 cell = row.getCell(4);
                 if (StringUtils.isNotBlank(cell.getStringCellValue())){
@@ -123,6 +132,32 @@ public class ReadExcelUtil {
                     failure.add(uscDrgSpecs);
                     continue;
                 }
+
+                //生产厂家
+                cell = row.getCell(7);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    uscDrgSpecs.setFactName(cell.getStringCellValue());
+                }else {
+                    cell = row.getCell(8);
+                    uscDrgSpecs.setFactName(cell.getStringCellValue());
+                }
+
+                //厂商地址 ----> 联系地址
+                cell = row.getCell(9);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    uscDrgSpecs.setRelAddr(cell.getStringCellValue());
+                }else {
+                    cell = row.getCell(10);
+                    uscDrgSpecs.setRelAddr(cell.getStringCellValue());
+                }
+
+                //生产厂家
+                cell = row.getCell(9);
+                if (StringUtils.isNotBlank(cell.getStringCellValue())){
+                    uscDrgSpecs.setRelAddr(cell.getStringCellValue());
+                }
+
+
                 uscDrgSpecs.setVersionId(511098310758469632L);
                 success.add(uscDrgSpecs);
             }
