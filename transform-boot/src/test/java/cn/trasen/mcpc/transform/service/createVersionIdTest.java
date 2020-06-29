@@ -6,6 +6,8 @@ import cn.trasen.mcpc.transform.util.WriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @program: project-parent
@@ -19,8 +21,8 @@ public class createVersionIdTest {
 
 //        handleDosform();
         System.out.println(IdWorker.getInstance().getId());
-        System.out.println(IdWorker.getInstance().getId());
-        System.out.println(IdWorker.getInstance().getId());
+
+
     }
 
     /**

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.trasen.mcpc.transform.dao.UscStatItemMapper">
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <resultMap id="BaseResultMap" type="cn.trasen.mcpc.transform.model.UscStatItem">
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="CODE" jdbcType="VARCHAR" property="code" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="ITEM_NAME" jdbcType="VARCHAR" property="itemName" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="MZKJ_CODE" jdbcType="VARCHAR" property="mzkjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="ZYKJ_CODE" jdbcType="VARCHAR" property="zykjCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="MZFP_CODE" jdbcType="VARCHAR" property="mzfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="ZYFP_CODE" jdbcType="VARCHAR" property="zyfpCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="MZHS_CODE" jdbcType="VARCHAR" property="mzhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="ZYHS_CODE" jdbcType="VARCHAR" property="zyhsCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="BA_CODE" jdbcType="VARCHAR" property="baCode" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="COMMENTS" jdbcType="VARCHAR" property="comments" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="STATUS" jdbcType="CHAR" property="status" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="PUBLISH" jdbcType="CHAR" property="publish" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="DELETE_FLAG" jdbcType="CHAR" property="deleteFlag" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_BY" jdbcType="DECIMAL" property="createBy" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_BY" jdbcType="DECIMAL" property="updateBy" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+
+    <!-- BaseResultMap和表字段一致，不允许改动 -->
+    <sql id="base_column">
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}ID,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}CODE,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}ITEM_NAME,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}MZKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}ZYKJ_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}MZFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}ZYFP_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}MZHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}ZYHS_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}BA_CODE,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}COMMENTS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}STATUS,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}PUBLISH,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}DELETE_FLAG,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_BY,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}CREATE_TIME,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_BY,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME,
+        ${alias}UPDATE_TIME
+    </sql>
+</mapper>
