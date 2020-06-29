@@ -15,6 +15,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class UscDrgSpecsDto extends UscDrgSpecs {
+
+    /** 是否成功 0-不成功 1-成功的但不新增 2-成功的，同时要新增*/
+    private Long isSuccess;
+
     /**读取错误信息*/
     private String readError;
 
@@ -32,8 +36,6 @@ public class UscDrgSpecsDto extends UscDrgSpecs {
 
     /**生产厂家id*/
     private Long factId;
-
-
 
     /**生产厂家联系地址*/
     private String relAddr;

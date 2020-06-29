@@ -20,7 +20,7 @@ public class SpecsServiceTest {
     private SpecsService specsService;
     @Test
     public void jkypSpecsTest(){
-        String s = specsService.jkypSpecs();
+        String s = specsService.jkypSpecs("1");
         Assert.assertNotNull(s);
     }
 }

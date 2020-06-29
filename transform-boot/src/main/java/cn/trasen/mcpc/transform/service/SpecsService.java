@@ -1,5 +1,7 @@
 package cn.trasen.mcpc.transform.service;
 
+import cn.trasen.core.feature.orm.mybatis.Page;
+
 /**
  * @program: project-parent
  * @description: 药品Service
@@ -13,6 +15,7 @@ public interface SpecsService {
      * 进口药品转sql
      * @param excelPath excel地址
      * @param sqlPath sql存入地址
+
      * @return
      */
     String jkypToSql(String excelPath, String sqlPath);
@@ -21,5 +24,5 @@ public interface SpecsService {
      * 导入药品规格
      * @return
      */
-    String jkypSpecs();
+    String jkypSpecs(String typ);
 }

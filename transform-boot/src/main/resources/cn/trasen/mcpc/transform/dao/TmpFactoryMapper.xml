@@ -40,4 +40,12 @@
         ${alias}UPDATE_BY,
         ${alias}UPDATE_TIME
     </sql>
+
+    <select id="all" resultMap="BaseResultMap">
+        select
+        <include refid="base_column">
+            <property name="alias" value="a." />
+        </include>
+        from tmp_factory a
+    </select>
 </mapper>

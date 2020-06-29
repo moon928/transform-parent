@@ -3,6 +3,8 @@ package cn.trasen.mcpc.transform.dao;
 import cn.trasen.mcpc.transform.model.TmpFactory;
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 /**
  * 临时的 药品生产厂家数据库操作.
  * 
@@ -13,4 +15,5 @@ import tk.mybatis.mapper.common.Mapper;
  * @Version: V1.0
  */
 public interface TmpFactoryMapper extends Mapper<TmpFactory> {
+    List<TmpFactory> all();
 }

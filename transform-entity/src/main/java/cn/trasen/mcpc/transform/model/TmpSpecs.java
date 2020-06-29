@@ -130,7 +130,7 @@ public class TmpSpecs extends BaseEntity {
     /** 剂量. */
     @Column(name = "DOSE")
     @ApiModelProperty(value = "剂量")
-    private DOUBLE dose;
+    private Double dose;
 
     /** 剂量单位 字典:YPDW_001. */
     @Column(name = "DOSEUNIT_CODE")
@@ -140,7 +140,7 @@ public class TmpSpecs extends BaseEntity {
     /** 含量. */
     @Column(name = "CONTENT")
     @ApiModelProperty(value = "含量")
-    private DOUBLE content;
+    private Double content;
 
     /** 含量单位 字典:YPDW_001. */
     @Column(name = "CONTENTUNIT_CODE")

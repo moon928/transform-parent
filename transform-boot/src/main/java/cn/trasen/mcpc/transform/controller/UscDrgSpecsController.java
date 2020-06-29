@@ -47,10 +47,12 @@ public class UscDrgSpecsController {
 
 
     @ApiOperation(value = "药品数据导入-导入药品规格数据", notes = "药品数据导入-导入药品规格数据")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "type", value = "类型 0-国产药品 1-进口药品", paramType = "query", dataType = "String")})
     @PostMapping("/specs")
-    public PlatformResult<String> specs() {
+    public PlatformResult<String> specs(@RequestParam("type") String type) {
         try{
-            String s = specsService.jkypSpecs();
+            String s = specsService.jkypSpecs(type);
             return PlatformResult.success(s);
         }catch (Exception e){
             log.error(e.getMessage(),e);
